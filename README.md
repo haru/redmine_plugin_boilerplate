@@ -4,7 +4,7 @@ redmine_plugin_boilerplate is a tool designed to simplify the process of creatin
 
 ## Usage
 
-To create a new Redmine plugin using redmine_boiler_plate, follow these steps:
+To create a new Redmine plugin using redmine_plugin_boilerplate, follow these steps:
 
 1. Open the redmine_boiler_plate repository on Github.
 2. Click on the `Use this template` button to create a new repository for your plugin. Make sure to name the repository according to the desired plugin name.
