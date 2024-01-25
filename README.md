@@ -1,6 +1,6 @@
 # Redmine plugin boilerplate
 
-redmine_boiler_plate is a tool designed to simplify the process of creating Redmine plugins. This project serves as a template repository on Github, providing a structured starting point for developing Redmine plugins.
+redmine_plugin_boilerplate is a tool designed to simplify the process of creating Redmine plugins. This project serves as a template repository on Github, providing a structured starting point for developing Redmine plugins.
 
 ## Usage
 
