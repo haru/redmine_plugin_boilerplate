@@ -3,9 +3,9 @@ cd $REDMINE_ROOT
 
 if [ -d .git.sv ]
 then
-    ln -s .git.sv .git
+    mv -s .git.sv .git
     git pull
-    rm .
+    rm .git
 fi
 
 ln -s /workspaces/${PLUGIN_NAME} plugins/${PLUGIN_NAME}
