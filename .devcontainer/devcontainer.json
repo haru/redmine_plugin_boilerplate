@@ -53,7 +53,8 @@
 		"KoichiSasada.vscode-rdbg",
 		"Serhioromano.vscode-gitflow",
 		"github.vscode-github-actions",
-		"Shopify.ruby-extensions-pack"
+		"Shopify.ruby-extensions-pack",
+		"ritwickdey.LiveServer"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
