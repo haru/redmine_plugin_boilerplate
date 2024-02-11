@@ -1,6 +1,5 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/ruby-rails-postgres
-// Update the VARIANT arg in docker-compose.yml to pick a Ruby version
+// Redmine plugin boilerplate
+// version: 1.0.0
 {
 	"name": "Redmine plugin",
 	"dockerComposeFile": "docker-compose.yml",
@@ -10,7 +9,6 @@
 		"source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind"
 	],
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	// "workspaceFolder": "/workspaces/dev.code-workspace",
     
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
