@@ -16,8 +16,6 @@ fi
 
 
 bundle install 
-bundle exec rake redmine:plugins:migrate
-bundle exec rake redmine:plugins:migrate RAILS_ENV=test
 
 initdb() {
     bundle exec rake db:create
