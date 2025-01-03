@@ -9,6 +9,6 @@ echo $PLUGIN_NAME
 
 cd $REDMINE_ROOT
 
-export RAILS_ENV="production"
+export RAILS_ENV="development"
 
 bundle exec rails generate redmine_plugin $PLUGIN_NAME
