@@ -29,7 +29,7 @@ services:
     image: postgres:latest
     restart: unless-stopped
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - ./postgres-data:/var/lib/postgresql/data
       - ./create-db-user.sql:/docker-entrypoint-initdb.d/create-db-user.sql
     environment:
       POSTGRES_USER: postgres
@@ -42,7 +42,7 @@ services:
     image: mysql:latest
     restart: unless-stopped
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
     # network_mode: service:postgres
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment:
@@ -50,6 +50,4 @@ services:
       MYSQL_USER: redmine
       MYSQL_DB: redmine
       MYSQL_PASSWORD: remine
-volumes:
-  postgres-data: null
-  mysql-data: null
+
