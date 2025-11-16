@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   app:
@@ -6,17 +6,18 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
       args:
-        # Update 'VARIANT' to pick a version of Ruby: 3, 3.0, 2, 2.7, 2.6
+        # Update 'VARIANT' to pick a version of Ruby
         # Append -bullseye or -buster to pin to an OS version.
         # Use -bullseye variants on local arm64/Apple Silicon.
-        RUBY_VERSION: "3.2"
+        RUBY_VERSION: "3.4"
         # Optional Node.js version to install
         NODE_VERSION: "lts/*"
-        REDMINE_VERSION: "6.0-stable"
+        REDMINE_VERSION: "6.1-stable"
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
-
+    volumes:
+      - ..:/usr/local/redmine/plugins/${localWorkspaceFolderBasename}:cached
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     # network_mode: service:postgres
     # Uncomment the next line to use a non-root user for all processes.
@@ -24,6 +25,7 @@ services:
 
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
+
 
   postgres:
     image: postgres:latest
@@ -50,4 +52,3 @@ services:
       MYSQL_USER: redmine
       MYSQL_DB: redmine
       MYSQL_PASSWORD: remine
-
