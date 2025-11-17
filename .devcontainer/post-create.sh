@@ -5,7 +5,7 @@ if [ -d .git.sv ]
 then
     mv .git.sv .git
     git pull
-    mv .git.sv .git
+    mv .git .git.sv
 fi
 
 
