@@ -4,8 +4,16 @@
 			"path": ".."
 		},
 		{
-			"path": "/usr/local/redmine"
+			"path": "/usr/local/redmine",
+			"settings": {
+				"git.enabled": false
+			}
 		}
 	],
-	"settings": {}
+	"settings": {
+		"git.ignoredRepositories": [
+			"/usr/local/redmine",
+			"/usr/local/redmine/plugins/*"
+		]
+	}
 }
