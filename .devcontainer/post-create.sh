@@ -3,7 +3,12 @@ cd `dirname $0`
 cd ..
 BASEDIR=`pwd`
 PLUGIN_NAME=`basename $BASEDIR`
-# .devcontainer/.envが無かったり、中にPLUGIN_NAMEが無かったら追加する
+
+if [ -f .devcontainer/redmine.code-workspace ] && grep -q '"/usr/local/redmine/plugins/dummy"' .devcontainer/redmine.code-workspace; then
+    sed -i.bak "s|\"/usr/local/redmine/plugins/dummy\"|\"/usr/local/redmine/plugins/$PLUGIN_NAME\"|g" .devcontainer/redmine.code-workspace
+    rm .devcontainer/redmine.code-workspace.bak
+fi
+
 if [ ! -f .devcontainer/.env ] || ! grep -q "^PLUGIN_NAME=" .devcontainer/.env; then
     echo "PLUGIN_NAME=$PLUGIN_NAME" >> .devcontainer/.env
     echo "##### Rebuild the container to apply the changes. #####"
@@ -19,6 +24,9 @@ then
     mv .git .git.sv
 fi
 
+if [ ! -f "$BASEDIR/init.rb" ]; then
+    bash "$BASEDIR/.devcontainer/plugin_generator.sh"
+fi
 
 bundle install 
 
