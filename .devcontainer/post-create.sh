@@ -1,4 +1,15 @@
 #!/bin/sh
+cd `dirname $0`
+cd ..
+BASEDIR=`pwd`
+PLUGIN_NAME=`basename $BASEDIR`
+# .devcontainer/.envが無かったり、中にPLUGIN_NAMEが無かったら追加する
+if [ ! -f .devcontainer/.env ] || ! grep -q "^PLUGIN_NAME=" .devcontainer/.env; then
+    echo "PLUGIN_NAME=$PLUGIN_NAME" >> .devcontainer/.env
+    echo "##### Rebuild the container to apply the changes. #####"
+    exit 0
+fi
+
 cd $REDMINE_ROOT
 
 if [ -d .git.sv ]

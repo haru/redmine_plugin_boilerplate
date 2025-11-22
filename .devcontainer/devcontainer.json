@@ -58,9 +58,6 @@
 	"features": {
 		// "git": "latest"
 	},
-	"containerEnv": {
-		"PLUGIN_NAME": "FOO"
-	},
 	"forwardPorts": [
 		3000
 	]
