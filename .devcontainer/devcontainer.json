@@ -5,9 +5,9 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"mounts": [
-		"source=${localWorkspaceFolder},target=/usr/local/redmine/plugins/${localWorkspaceFolderBasename},type=bind"
+		"source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind"
 	],
-	"workspaceFolder": "/usr/local/redmine/plugins/${localWorkspaceFolderBasename}",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"sqltools.connections": [
