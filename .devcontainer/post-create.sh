@@ -5,7 +5,7 @@ BASEDIR=`pwd`
 PLUGIN_NAME=`basename $BASEDIR`
 
 if [ ! -f ~/.bashrc ]; then
-    cp ~/.bashrc.backup ~/.bashrc
+    cp /.bashrc.backup ~/.bashrc
 fi
 
 if [ -f .devcontainer/redmine.code-workspace ] && grep -q '"/usr/local/redmine/plugins/dummy"' .devcontainer/redmine.code-workspace; then
