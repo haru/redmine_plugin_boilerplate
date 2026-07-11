@@ -23,12 +23,7 @@ fi
 
 cd $REDMINE_ROOT
 
-if [ -d .git.sv ]
-then
-    mv .git.sv .git
-    git pull
-    mv .git .git.sv
-fi
+git pull
 
 if [ ! -f "$BASEDIR/init.rb" ]; then
     bash "$BASEDIR/.devcontainer/plugin_generator.sh"
@@ -37,6 +32,7 @@ fi
 bundle install 
 
 initdb() {
+    rm -f db/schema.rb
     bundle exec rake db:create
     bundle exec rake db:migrate
     bundle exec rake redmine:plugins:migrate
