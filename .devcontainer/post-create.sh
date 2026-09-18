@@ -3,6 +3,7 @@ cd `dirname $0`
 cd ..
 BASEDIR=`pwd`
 PLUGIN_NAME=`basename $BASEDIR`
+git config --global --add safe.directory $BASEDIR
 
 if [ ! -f ~/.bashrc ]; then
     cd ~/
